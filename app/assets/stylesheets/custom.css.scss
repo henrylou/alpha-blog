@@ -47,10 +47,16 @@
 
 }
 
+.article-title {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
 .article-body {
-	color: blue;
+	/*color: blue;*/
 	border-top: 1px solid #eaeaea;
-	padding-top: 5px
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
 
 .article-meta-details {
@@ -61,6 +67,11 @@
 .article-actions {
 	border-top: 1px solid #eaeaea;
 	padding-top: 5px;
+}
+
+.listing {
+	list-style: none;
+	padding-left: 0;
 }
 
 .footer {
