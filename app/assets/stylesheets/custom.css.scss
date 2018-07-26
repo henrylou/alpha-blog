@@ -6,6 +6,9 @@ body {
    background-size: cover;
 }
 
+body#home {
+	background-image: none;
+}
 
 #logo {
 	float: left;
