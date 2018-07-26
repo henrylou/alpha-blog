@@ -1,20 +1,23 @@
-/*$navbar-default-bg: 'red';*/
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+   background-image: asset-url('new_cover_page.jpg');
+   background-size: cover;
+}
 
 
 #logo {
 	float: left;
 	font-size: 1.7em;
-	color: #000fff;
+	color: black;
 	text-transform: uppercase;
 	letter-spacing: -1px;
 	font-weight: bold;
 }
 
 #logo:hover {
-	color: yellow;
+	color: #AFEEEE;
 	text-decoration: none;
 }
 
@@ -24,14 +27,12 @@
 
 .jumbotron {
 	background-image: asset-url('new_cover_page.jpg');
-	/*background-image: asset-url('cover_home.jpg');*/
 	background-size: cover;
 	width: auto;
 	height: auto;
 }
 
 .jumbotron h1 {
-	color: #fff;
 	text-align: center;
 	margin-bottom: 30px;
 	font-weight: bold;
@@ -42,7 +43,7 @@
 }
 
 .btn-xlarge:hover {
-	color: yellow;
+	color: black;
 	text-decoration: none;
 
 }
@@ -53,7 +54,6 @@
 }
 
 .article-body {
-	/*color: blue;*/
 	border-top: 1px solid #eaeaea;
 	padding-top: 15px;
 	padding-bottom: 15px;
@@ -75,7 +75,7 @@
 }
 
 .badge {
-  background-color: #fff;
+  background-color: #87CEFA;
   text-transform: uppercase;
   letter-spacing: -1px;
   font-weight: bold;
@@ -93,7 +93,7 @@
 }
 
 .footer a:hover {
-	color: #222;
+	color: #AFEEEE;
 }
 
 .footer small {
