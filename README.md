@@ -7,6 +7,6 @@ This is the repository for Alpha Blog web app.
 
 ## Demo
 
-The demo website is **https://alpha-blog-hengyu.herokuapp.com/**
-- Demo user email: **henry@example.com** password: **password**
-- Demo admin email: **admin@example.com** password: **password**
+The demo website is **https://blogging-online.herokuapp.com**
+- Demo user email: **henry@example.com**, password: **password**
+- Demo admin email: **admin@example.com**, password: **password**
