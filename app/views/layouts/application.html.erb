@@ -15,10 +15,10 @@
     <% if controller_name == 'pages' %>
       <%= yield %>
     <% else %>
-      <div class="custom-bg">
+      <!-- <div class="custom-bg"> -->
         <%= render 'layouts/messages' %>
         <%= yield %>
-      </div>
+      <!-- </div> -->
     <% end %>
 
     <%= render 'layouts/footer' %>
