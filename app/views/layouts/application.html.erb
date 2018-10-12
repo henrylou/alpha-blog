@@ -12,8 +12,15 @@
 
   <body>
     <%= render 'layouts/navigation' %>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <% if controller_name == 'pages' %>
+      <%= yield %>
+    <% else %>
+      <div class="custom-bg">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    <% end %>
+
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
   </body>
