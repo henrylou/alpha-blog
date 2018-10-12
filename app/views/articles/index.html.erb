@@ -1,6 +1,15 @@
-<h1 align="center">All Articles</h1>
+<header class="custom-bg">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading text-white">
+          <h1>All Artilces</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <%= render 'article', obj: @articles %>
-<div class="center">
-	<%= will_paginate %>
-</div>
+<%= will_paginate %>
