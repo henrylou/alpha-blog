@@ -1,16 +1,32 @@
-<h1 align="center">All Categories</h1>
-<div align="center">
-  <% @categories.each do |category| %>
-    <ul class="listing">
-      <div class="row">
-        <div class="well col-md-4 col-md-offset-4">
-          <li class="article-title">
-            <%= link_to category.name, category_path(category) %>
-          </li>
-          <li><small><%= pluralize(category.articles.count, "article") %></small></li>
+<header class="custom-bg">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading text-white">
+          <h1>All Categories</h1>
         </div>
       </div>
-    </ul>
-  <% end %>
-  <%= will_paginate %>
+    </div>
+  </div>
+</header>
+
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <% if @categories.any? %>
+        <% @categories.each do |category| %>
+          <div class=" text-secondary">
+            <%= link_to category.name, category_path(category), class: "btn btn-warning btn-lg" %>
+          </div>
+          <h5 class="mt-2"><%= pluralize(category.articles.count, "article") %></h5>
+          <hr>
+        <% end %>
+      <% else %>
+        <h2>No categories!</h2>
+      <% end %>
+    </div>
+  </div>
 </div>
+
+<%= will_paginate %>

@@ -1,24 +1,37 @@
-<div class="custom-bg">
-  <!-- Team Members Row -->
+<header class="custom-bg">
+  <div class="overlay"></div>
   <div class="container">
     <div class="row">
-      <!-- <div class="col-lg-12">
-        <h2 class="my-4">Our Team</h2>
-      </div> -->
-      <% @users.each do |user| %>
-      <div class="col-lg-4 col-sm-6 text-center mb-4">
-        <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
-        <%= link_to gravatar_for(user), user_path(user) %>
-        <h3>
-          <%= link_to user.username, user_path(user) %>
-        </h3>
-        <p><%= pluralize(user.articles.count, "article") if user.articles %></small></p>
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="post-heading text-white">
+          <h1>All Bloggers</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Team Members Row -->
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <!-- <div class="col-lg-12">
+      <h2 class="my-4">Our Team</h2>
+    </div> -->
+    <% @users.each do |user| %>
+    <div class="col-lg-4 col-sm-6 text-center mb-4">
+      <!-- <img class="rounded-circle img-fluid d-block mx-auto" src="http://placehold.it/200x200" alt=""> -->
+      <%= link_to gravatar_for(user), user_path(user) %>
+      <h3>
+        <%= link_to user.username, user_path(user), class: "text-secondary" %>
+      </h3>
+      <p>
+        <%= pluralize(user.articles.count, "article") if user.articles %></small>
         <% if logged_in? && current_user.admin? %>
-          <%= link_to "Delete the user", user_path(user), method: :delete, data: { confirm: "Are you sure to delete the user and all his or her articles?" } %>
+          <%= link_to icon("fas", "trash"), user_path(user), method: :delete, data: { confirm: "Are you sure to delete the user and all his or her articles?" }, class: "text-secondary" %>
           <% end %>
         </div>
-      <% end %>
-      <%= will_paginate :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center' %>
-    </div>
+      </p>
+    <% end %>
+    <%= will_paginate :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center' %>
   </div>
 </div>

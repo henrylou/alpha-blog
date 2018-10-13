@@ -1,27 +1,29 @@
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
   <div class="row">
     <div class="col-lg-8 col-md-10 mx-auto">
-      <% obj.each do |article| %>
-        <div>
-          <h2><%= link_to article.title, article_path(article) %></h2>
-          <h5><%= truncate(article.description, length: 100) %></h5>
-          <p>Posted by
-            <%= article.user.username if article.user %>, 
-            <%= time_ago_in_words(article.created_at) %> ago, last updated <%= time_ago_in_words(article.updated_at) %> ago
-            <% if logged_in? && (current_user == article.user || current_user.admin?) %>
-              &nbsp;
-              <%= link_to icon('fas', 'edit'), edit_article_path(article), class: "text-secondary" %>
-              &nbsp;
-              <%= link_to icon('fas', 'trash'), article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?"}, class: "text-secondary" %>
+      <% if obj.any? %>
+        <% obj.each do |article| %>
+          <div>
+            <h2><%= link_to article.title, article_path(article) %></h2>
+            <h5><%= truncate(article.description, length: 100) %></h5>
+            <p>Posted by
+              <%= article.user.username if article.user %>, 
+              <%= time_ago_in_words(article.created_at) %> ago, last updated <%= time_ago_in_words(article.updated_at) %> ago
+              <% if logged_in? && (current_user == article.user || current_user.admin?) %>
+                &nbsp;
+                <%= link_to icon('fas', 'edit'), edit_article_path(article), class: "text-secondary" %>
+                &nbsp;
+                <%= link_to icon('fas', 'trash'), article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete the article?"}, class: "text-secondary" %>
+              <% end %>
+            </p>
+            <% article.categories.each do |category| %>     
+              <div class="badge badge-warning"><%= category.name %></div>
             <% end %>
-
-          </p>
-
-          <% article.categories.each do |category| %>     
-            <div class="badge badge-warning"><%= category.name %></div>
-          <% end %>
-        </div>
-        <hr>
+          </div>
+          <hr>
+        <% end %>
+      <% else %>
+        <h2>No articles!</h2>
       <% end %>
       <!-- Pager -->
 <!--       <div class="clearfix">
