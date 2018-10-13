@@ -26,7 +26,7 @@
         <%= simple_format(@article.description) %>
         <div>
           <% @article.categories.each do |category| %>     
-            <div class="badge badge-warning"><%= category.name %></div>
+            <%= link_to category.name, category_path(category), class: "badge badge-warning" %>
           <% end %>
         </div>
         <div class="mt-2">

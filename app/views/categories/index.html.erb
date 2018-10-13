@@ -16,7 +16,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <% if @categories.any? %>
         <% @categories.each do |category| %>
-          <div class=" text-secondary">
+          <div class="text-secondary">
             <%= link_to category.name, category_path(category), class: "btn btn-warning btn-lg" %>
           </div>
           <h5 class="mt-2"><%= pluralize(category.articles.count, "article") %></h5>

@@ -4,7 +4,7 @@
       <% if obj.any? %>
         <% obj.each do |article| %>
           <div>
-            <h2><%= link_to article.title, article_path(article) %></h2>
+            <h2><%= link_to article.title, article_path(article), class: 'text-warning' %></h2>
             <h5><%= truncate(article.description, length: 100) %></h5>
             <p>Posted by
               <%= article.user.username if article.user %>, 
@@ -17,7 +17,7 @@
               <% end %>
             </p>
             <% article.categories.each do |category| %>     
-              <div class="badge badge-warning"><%= category.name %></div>
+              <%= link_to category.name, category_path(category), class: "badge badge-warning" %>
             <% end %>
           </div>
           <hr>
