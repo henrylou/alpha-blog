@@ -32,6 +32,8 @@
         </div>
       </p>
     <% end %>
-    <%= will_paginate :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer, class: 'justify-content-center' %>
   </div>
 </div>
+
+<%= will_paginate list_classes: %w(pagination justify-content-center), class: 'text-secondary' %>
+

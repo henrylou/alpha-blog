@@ -12,4 +12,4 @@
 </header>
 
 <%= render 'article', obj: @articles %>
-<%= will_paginate %>
+<%= will_paginate list_classes: %w(pagination justify-content-center), class: 'text-secondary' %>
